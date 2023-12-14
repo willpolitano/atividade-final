@@ -1,0 +1,3 @@
+ssh -i ./keys.keys ubuntu@ec2-54-187-92-169.us-west-2.compute.amazonaws.com
+
+ansible-playbook -i "ec2-54-187-92-169.us-west-2.compute.amazonaws.com," -u ubuntu -b --private-key=./keys/keys playbook.yml

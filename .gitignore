@@ -1,0 +1,10 @@
+# Arquivos do Terraform
+.terraform*
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+*.tfstate*
+*.tfplan
+
+# Arquivos do chaves
+keys
