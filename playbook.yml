@@ -44,10 +44,6 @@
         state: latest
         update_cache: true
 
-    - name: Install Docker Module for Python
-      pip:
-        name: docker
-
     - name: Add "ansible_ubuntu_demo" user to "docker" group
       remote_user: ubuntu
       user:
@@ -64,11 +60,17 @@
         version: master
 
     - name: Change to project directory
-      become: false  # Switch back to the default user
+      become: false
       shell: cd /home/ubuntu/azure-voting-app-redis
+
+    - name: Install docker-compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: '755'
 
     - name: Run Docker Compose
       become: true
-      shell: sudo docker-compose up -d
+      shell: docker-compose up -d
       args:
         chdir: /home/ubuntu/azure-voting-app-redis
