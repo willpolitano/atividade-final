@@ -10,12 +10,12 @@
 
 #### Atualizando os pacotes
 ```sh
-sudo apt update
+apt update
 ```
 
 #### Instalando AWS CLI
 ```sh
-sudo apt install awscli
+apt install awscli
 ```
 
 #### Instalando TERRAFORM
@@ -27,7 +27,7 @@ sudo mv terraform /usr/local/bin/
 
 #### Instalando ANSIBLE
 ```sh
-sudo apt install ansible
+apt install ansible
 ```
 
 ## CONFIGURAR O AWS CLI
